@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-import {  FormGroup, FormControl } from '@angular/forms';
-import { Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +10,7 @@ import { Validators } from '@angular/forms';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(private location: Location
+  constructor(private router: Router
     ) { }
 
   profileForm = new FormGroup({
@@ -25,13 +24,11 @@ export class HomepageComponent implements OnInit {
   }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
     if(!this.profileForm.valid)
       return false
-    console.log(this.profileForm);
 
-    this.location.go('generator')
+    console.log(this.profileForm);
+    this.router.navigate(['/generator'])
     return true
-    //console.log(this.password);
   }
 }
