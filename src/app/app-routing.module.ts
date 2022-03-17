@@ -5,7 +5,7 @@ import { GeneratorComponent } from './generator/generator.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: '/generator', component: GeneratorComponent }
+  { path: 'generator', component: GeneratorComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
 ];
 

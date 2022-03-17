@@ -30,7 +30,7 @@ export class HomepageComponent implements OnInit {
       return false
     console.log(this.profileForm);
 
-    this.location.go('/generator')
+    this.location.go('generator')
     return true
     //console.log(this.password);
   }
