@@ -2,35 +2,39 @@
     <div class="login-container">
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
         <div class="input-container">
-                <label htmlFor="username" >Username</label>
-                <input
-                    required minlength="4" 
-                    name="username"
-                    type="text" 
-                    placeholder="Enter your username"
-                    formControlName="username"
-                />
+            <label htmlFor="username" >Username</label>
+            <input
+                required minlength="4" 
+                name="username"
+                type="text" 
+                placeholder="Enter your username"
+                formControlName="username"
+            />
+            <span class="errorMessage">
                 <div *ngIf="profileForm.controls['username'].errors?.['required']">
                     Username is required.
                 </div>
                 <div *ngIf="profileForm.controls['username'].errors?.['maxlength']">
                     Username is too long
                 </div>
+            </span>
         </div>
         <div class="input-container">
-                <label htmlFor="password" >Password</label>
-                <input 
-                    name="password"
-                    type="password" 
-                    placeholder="Enter your password"
-                    formControlName="password"
-                />
+            <label htmlFor="password" >Password</label>
+            <input 
+                name="password"
+                type="password" 
+                placeholder="Enter your password"
+                formControlName="password"
+            />
+            <span class="errorMessage">
                 <div *ngIf="profileForm.controls['password'].errors?.['required']">
                     Password is required.
                 </div>
                 <div *ngIf="profileForm.controls['password'].errors?.['minlength']">
                     Password must contain a minimum of 6 characters
                 </div>
+            </span>
         </div>
         <div class="btn-container">
           <button  class="btn-submit">Login</button>
